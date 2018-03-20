@@ -1,0 +1,38 @@
+[
+  {
+    "model": "homepage.City",
+    "pk":1,
+    "fields":{
+        "id": 1,
+        "name_city": "Barranquilla"
+      }
+  },
+  {
+    "model": "homepage.Packages",
+    "pk":1,
+    "fields":{
+        "id": 1,
+        "name_packages": "30 Mil",
+        "value":30.000
+      }
+  },
+  {
+    "model": "homepage.Packages",
+    "pk":2,
+    "fields":{
+        "id": 2,
+        "name_packages": "50 mil",
+        "value":50.000
+      }
+  },
+  {
+    "model": "homepage.Packages",
+    "pk":3,
+    "fields":{
+        "id": 3,
+        "name_packages": "90 mil",
+        "value":90.000
+      }
+  }
+]
+

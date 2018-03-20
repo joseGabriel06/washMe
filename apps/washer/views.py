@@ -28,10 +28,10 @@ class NewWasherView(CreateView):
         last_name    = form.instance.last_name
         emiil        = form.instance.emiil
         contenido    = contenido.format(first_name,last_name)
-        subject      = 'Asunto'
+        subject      = 'washme'
         text_content = 'Mensaje...nLinea 2nLinea3'
         html_content = contenido
-        from_email   = '"origen" <joseguzmanlopez404@gmail.com>'
+        from_email   = '"origen" <Hola@wioclean.com>'
         to           = emiil
         msg          = EmailMultiAlternatives(subject, text_content, from_email, [to])
         msg.attach_alternative(html_content, "text/html")
@@ -46,8 +46,7 @@ class NewWasherView(CreateView):
     layout = Layout(
         Row('first_name','last_name'),
         Row('emiil','phone'),
-        Row('birthday','sex'),
-        Row('image'),
+        Row('birthday','sex')
     )
     
 class HomeDoneView(TemplateView):

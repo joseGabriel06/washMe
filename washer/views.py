@@ -1,6 +1,6 @@
 import os
-from apps.washer.forms import UploadForm
-from apps.washer.models import Register
+from washer.forms import UploadForm
+from washer.models import Register
 from django.core.mail import EmailMultiAlternatives
 from django.core.urlresolvers import reverse
 from django.conf import settings

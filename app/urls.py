@@ -5,13 +5,13 @@ from material.frontend import urls as frontend_urls
 from registration.backends.default.views import RegistrationView
 from django.contrib.auth import views as auth_views
 
-from apps.homepage.views import (
+from homepage.views import (
     HomeView,
     create_service,
     ServiceListView,
  )
 
-from apps.washer.views import (
+from washer.views import (
      HomeDoneView,
     NewWasherView,
  )

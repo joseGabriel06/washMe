@@ -9,7 +9,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from datetime import datetime
 from django.utils.timezone import utc
-from apps.washer.models import Register
+from washer.models import Register
 
 class City(models.Model):
 	name_city = models.CharField(max_length=50)

@@ -24,9 +24,8 @@ DJANGO_CORE_APPS = (
 )
 
 CORE_APPS = (
-    'apps',
-    'apps.homepage',
-    'apps.washer',  
+    'homepage',
+    'washer',  
 )
 
 THIRD_PATTY_APPS = (

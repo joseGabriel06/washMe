@@ -141,83 +141,89 @@
                                                             </p>
                                                         </div>
                                                         <div class="card-action">
-                                                            {% if object.hours.value == "30.000" %}
-                                                            <form accept-charset="UTF-8" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" method="post">
-                                                                <input name="buttonId" type="hidden" value="VgDL7MJqt+GBWo8uoFOIhaTqSLyNVHsRsuDVZWQb1ysk4Ni4w53s+A=="/>
-                                                                <input name="merchantId" type="hidden" value="507148"/>
-                                                                <input name="accountId" type="hidden" value="679856"/>
-                                                                <input name="description" type="hidden" value="bolsa de 2 horas "/>
-                                                                <input name="referenceCode" type="hidden" value="was30"/>
-                                                                <input name="amount" type="hidden" value="30000"/>
-                                                                <input name="tax" type="hidden" value="0"/>
-                                                                <input name="taxReturnBase" type="hidden" value="0"/>
-                                                                <input name="shipmentValue" type="hidden" value="0"/>
-                                                                <input name="currency" type="hidden" value="COP"/>
-                                                                <input name="lng" type="hidden" value="es"/>
-                                                                <input name="approvedResponseUrl" type="hidden" value="http://127.0.0.1:8000/"/>
-                                                                <input name="declinedResponseUrl" type="hidden" value="http://127.0.0.1:8000/x"/>
-                                                                <input name="pendingResponseUrl" type="hidden" value="http://127.0.0.1:8000/y"/>
-                                                                <input name="displayShippingInformation" type="hidden" value="NO"/>
-                                                                <input id="urlOrigen" name="sourceUrl" type="hidden" value=""/>
-                                                                <input name="buttonType" type="hidden" value="SIMPLE"/>
-                                                                <input name="signature" type="hidden" value="5f559e872c134fa086be94c8e524dbefb57f60fc961d7a11e3404fce248bacf2"/>
-                                                                <button class="waves-effect light-green waves-light btn rounded center-align" type="submit">
+                                                            {% if object.hours.value == "30000" %}
+                                                            <form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
+  
+  <input name="buttonId" type="hidden" value="SQ8MTsb/bYyXCmx6xTsefQ/RUFM/PcnGf6PJGlieP11Ctea1lnGSew=="/>
+  <input name="merchantId" type="hidden" value="507148"/>
+  <input name="accountId" type="hidden" value="679856"/>
+  <input name="description" type="hidden" value="pakete1"/>
+  <input name="referenceCode" type="hidden" value="0030"/>
+  <input name="amount" type="hidden" value="30000"/>
+  <input name="tax" type="hidden" value="0"/>
+  <input name="taxReturnBase" type="hidden" value="0"/>
+  <input name="shipmentValue" value="0" type="hidden"/>
+  <input name="currency" type="hidden" value="COP"/>
+  <input name="lng" type="hidden" value="es"/>
+  <input name="approvedResponseUrl" type="hidden" value="http://wioclean.herokuapp.com/"/>
+  <input name="declinedResponseUrl" type="hidden" value="http://wioclean.herokuapp.com/"/>
+  <input name="pendingResponseUrl" type="hidden" value="http://wioclean.herokuapp.com/"/>
+  <input name="displayShippingInformation" type="hidden" value="YES"/>
+  <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
+  <input name="buttonType" value="SIMPLE" type="hidden"/>
+  <input name="signature" value="04186a2da58ec8571b527eb543b0bdd23343701636daf5ae08958353a126ff55" type="hidden"/>
+ <button class="waves-effect light-green waves-light btn rounded center-align" type="submit">
                                                                     Paga Hora
                                                                     <i class="fa fa-angle-double-right" aria-hidden="true">
                                                                     </i>
                                                                 </button>
-                                                            </form>
-                                                            {% else %} {% if object.hours.value == "50.000" %}
-                                                            <form accept-charset="UTF-8" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" method="post">
-                                                                <input name="buttonId" type="hidden" value="qU/v/bMaGiAqLXGaEOu7+cUM4R9dNDD4zlVCGynFokXyYOI6fhBmRA=="/>
-                                                                <input name="merchantId" type="hidden" value="507148"/>
-                                                                <input name="accountId" type="hidden" value="679856"/>
-                                                                <input name="description" type="hidden" value="bolsa de 4 horas "/>
-                                                                <input name="referenceCode" type="hidden" value="was40"/>
-                                                                <input name="amount" type="hidden" value="50000"/>
-                                                                <input name="tax" type="hidden" value="0"/>
-                                                                <input name="taxReturnBase" type="hidden" value="0"/>
-                                                                <input name="shipmentValue" type="hidden" value="0"/>
-                                                                <input name="currency" type="hidden" value="COP"/>
-                                                                <input name="lng" type="hidden" value="es"/>
-                                                                <input name="approvedResponseUrl" type="hidden" value="http://127.0.0.1:8000/"/>
-                                                                <input name="declinedResponseUrl" type="hidden" value="http://127.0.0.1:8000/x"/>
-                                                                <input name="pendingResponseUrl" type="hidden" value="http://127.0.0.1:8000/y"/>
-                                                                <input name="displayShippingInformation" type="hidden" value="NO"/>
-                                                                <input id="urlOrigen" name="sourceUrl" type="hidden" value=""/>
-                                                                <input name="buttonType" type="hidden" value="SIMPLE"/>
-                                                                <input name="signature" type="hidden" value="c5ff7887620a77eba1d330a5abe9a4d6784d356038bdbee97ad6b5e60ab153b0"/>
-                                                                <button class="waves-effect light-green waves-light btn rounded center-align" type="submit">
+</form>
+                                                            {% else %} {% if object.hours.value == "50000" %}
+<form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
+  
+  <input name="buttonId" type="hidden" value="Q3pBz7hqG4XsH1w7XzbofGojQbRULogJm4tNHj6tzTd8fxbjARLPKA=="/>
+  <input name="merchantId" type="hidden" value="507148"/>
+  <input name="accountId" type="hidden" value="679856"/>
+  <input name="description" type="hidden" value="paquete 2"/>
+  <input name="referenceCode" type="hidden" value="0030"/>
+  <input name="amount" type="hidden" value="50000"/>
+  <input name="tax" type="hidden" value="0"/>
+  <input name="taxReturnBase" type="hidden" value="0"/>
+  <input name="shipmentValue" value="0" type="hidden"/>
+  <input name="currency" type="hidden" value="COP"/>
+  <input name="lng" type="hidden" value="es"/>
+  <input name="approvedResponseUrl" type="hidden" value="http://wioclean.herokuapp.com/"/>
+  <input name="declinedResponseUrl" type="hidden" value="http://wioclean.herokuapp.com/"/>
+  <input name="pendingResponseUrl" type="hidden" value="http://wioclean.herokuapp.com/"/>
+  <input name="displayShippingInformation" type="hidden" value="YES"/>
+  <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
+  <input name="buttonType" value="SIMPLE" type="hidden"/>
+  <input name="signature" value="33b0ed1fda5dce263c66b74fe9e61348ccec923961d1e4323b0e9c604bd0ed8a" type="hidden"/>
+ <button class="waves-effect light-green waves-light btn rounded center-align" type="submit">
                                                                     Paga Hora
                                                                     <i class="fa fa-angle-double-right" aria-hidden="true">
                                                                     </i>
                                                                 </button>
-                                                            </form>
+</form>
+
                                                             {% else %}
-                                                            <form accept-charset="UTF-8" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" method="post">
-                                                                <input name="buttonId" type="hidden" value="sFoNi8jMp0L3552jKANcD8TBUIAr1xy7gooF1Q1+N2m5wgrLMVq/FQ=="/>
-                                                                <input name="merchantId" type="hidden" value="507148"/>
-                                                                <input name="accountId" type="hidden" value="679856"/>
-                                                                <input name="description" type="hidden" value="bolsa de 8 horas "/>
-                                                                <input name="referenceCode" type="hidden" value="was80"/>
-                                                                <input name="amount" type="hidden" value="90000"/>
-                                                                <input name="tax" type="hidden" value="0"/>
-                                                                <input name="taxReturnBase" type="hidden" value="0"/>
-                                                                <input name="shipmentValue" type="hidden" value="0"/>
-                                                                <input name="currency" type="hidden" value="COP"/>
-                                                                <input name="lng" type="hidden" value="es"/>
-                                                                <input name="approvedResponseUrl" type="hidden" value="http://127.0.0.1:8000/"/>
-                                                                <input name="declinedResponseUrl" type="hidden" value="http://127.0.0.1:8000/x"/>
-                                                                <input name="pendingResponseUrl" type="hidden" value="http://127.0.0.1:8000/y"/>
-                                                                <input name="displayShippingInformation" type="hidden" value="NO"/>
-                                                                <input id="urlOrigen" name="sourceUrl" type="hidden" value=""/>
-                                                                <input name="buttonType" type="hidden" value="SIMPLE"/>
-                                                                <button class="waves-effect light-green waves-light btn rounded center-align" type="submit">
+<form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
+  
+  <input name="buttonId" type="hidden" value="JFIdzezHWzA2xtNnxertBfS36j22YRanxKZVIe2Gh7vZo6HJaunZ+w=="/>
+  <input name="merchantId" type="hidden" value="507148"/>
+  <input name="accountId" type="hidden" value="679856"/>
+  <input name="description" type="hidden" value="paquete 2"/>
+  <input name="referenceCode" type="hidden" value="0030"/>
+  <input name="amount" type="hidden" value="90000"/>
+  <input name="tax" type="hidden" value="0"/>
+  <input name="taxReturnBase" type="hidden" value="0"/>
+  <input name="shipmentValue" value="0" type="hidden"/>
+  <input name="currency" type="hidden" value="COP"/>
+  <input name="lng" type="hidden" value="es"/>
+  <input name="approvedResponseUrl" type="hidden" value="http://wioclean.herokuapp.com/"/>
+  <input name="declinedResponseUrl" type="hidden" value="http://wioclean.herokuapp.com/"/>
+  <input name="pendingResponseUrl" type="hidden" value="http://wioclean.herokuapp.com/"/>
+  <input name="displayShippingInformation" type="hidden" value="YES"/>
+  <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
+  <input name="buttonType" value="SIMPLE" type="hidden"/>
+  <input name="signature" value="c6528b79eb34b7beee1c7031d1d1ecf04cffe8a6cf87838427a5b5046b59d4a1" type="hidden"/>
+ <button class="waves-effect light-green waves-light btn rounded center-align" type="submit">
                                                                     Paga Hora
                                                                     <i class="fa fa-angle-double-right" aria-hidden="true">
                                                                     </i>
                                                                 </button>
-                                                            </form>
+</form>
+                                                    
                                                             {% endif %}
                                                             {% endif %}
                                                         </div>

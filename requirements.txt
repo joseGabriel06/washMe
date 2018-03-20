@@ -20,13 +20,12 @@ oauthlib==2.0.5
 parso==0.1.0
 pexpect==4.2.1
 pickleshare==0.7.4
-pkg-resources==0.0.0
 prompt-toolkit==1.0.15
 psycopg2==2.7.3.1
 ptyprocess==0.5.2
 Pygments==2.2.0
 PyJWT==1.5.3
-pypugjs==4.2.2
+
 python-dateutil==1.5
 python-social-auth==0.3.6
 python3-openid==3.1.0

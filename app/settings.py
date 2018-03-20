@@ -31,11 +31,11 @@ DEBUG = True
 
 
 # smtp server settings for gmail
-EMAIL_HOST          = 'smtp.gmail.com'
-EMAIL_HOST_USER     = os.environ['EMAILHOSTUSERDJANGO']
-EMAIL_HOST_PASSWORD = os.environ['EMAILPASS']
-EMAIL_PORT          = 587
-EMAIL_USE_TLS       = True
+# EMAIL_HOST          = 'smtp.gmail.com'
+# EMAIL_HOST_USER     = os.environ['EMAILHOSTUSERDJANGO']
+# EMAIL_HOST_PASSWORD = os.environ['EMAILPASS']
+# EMAIL_PORT          = 587
+# EMAIL_USE_TLS       = True
 
 
 ALLOWED_HOSTS = ['*']
@@ -125,13 +125,8 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'washmex',
-        'USER': 'postgres',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
-        'PORT': 5432,
-        'CHARSET':'UTF8',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'lite.sqlite3'),
     }
 }
 ########33

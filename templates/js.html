@@ -1,6 +1,6 @@
 {% load i18n %}
 {% load staticfiles %}
-<script src="{% static 'js/jquery-3.2.1.min.js' %}">
+<script crossorigin="anonymous" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" src="https://code.jquery.com/jquery-3.3.1.js">
 </script>
 <script src="{% static 'home/js/jquery.smoothscroll.min.js' %}">
 </script>
@@ -131,7 +131,5 @@
     A = f.getFullYear() + "-" + (f.getMonth() +1) + "-" +  f.getDate()    
     $('.datepicker').val(A)
 </script>
-</script>
-</style>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet" type="text/css"/>

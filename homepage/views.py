@@ -62,7 +62,7 @@ def create_service(request):
 
 
 class ServiceListView(LoginRequiredMixin,ListView):
-	template_name  = 'homepage/home_pay_view.html'
+	template_name  = 'homepage/home_pay_view.pug'
 	model = Service
 	def get_queryset(self, *args, **kwargs):
 		qs = super(ServiceListView,self).get_queryset(*args,**kwargs).filter(owner=self.request.user)

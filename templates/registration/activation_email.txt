@@ -1,4 +1,4 @@
 {% load i18n %}
-{% trans "Activate your account in" %} {{ site.name }}:
+{% trans "Activa tu cuenta en" %} {{ site.name }}:
 http://{{ site.domain }}{% url 'registration_activate' activation_key %}
-{% blocktrans %}Valid link during{{ expiration_days }} days.{% endblocktrans %}
+{% blocktrans %}Enlace válido durante{{ expiration_days }} dias.{% endblocktrans %}

@@ -3,8 +3,7 @@
         <div class="row">
             <div class="col s12 m6 l8 ">
                 <ul>
-                    
-                   {% if request.path == '/' %}
+                    {% if request.path == '/' %}
                     <li>
                         <a href="{% url 'pay' %} ">
                             Agendar
@@ -20,13 +19,7 @@
                             Apoyo
                         </a>
                     </li>
-                    <li>
                     {% endif %}
-
-                        <a href="">
-                            Preguntas frecuentes
-                        </a>
-                    </li>
                     <li>
                         <a href="{% url 'new_washer' %}">
                             ¿Estas buscando trabajo  ?
@@ -35,7 +28,7 @@
                 </ul>
             </div>
             <div class="col s12 m6 l4 ">
-                <a href="index.html">
+                <a href="/">
                     <h5>
                         Encuentranos En
                     </h5>

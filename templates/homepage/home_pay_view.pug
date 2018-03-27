@@ -1,0 +1,178 @@
+doctype html
+| {% load i18n %}
+| {% load staticfiles %}
+| {% include 'js.html' %}
+html(lang='es')
+  | {% include 'head.html' %}
+  body
+    | {% include 'nav.html' %}
+    section#apoyo.testimonials-section
+      .sec-padded-1x
+        .row.btm-mrgn-0
+          .col.s12.l8.offset-l2
+            .center-heading
+              .row
+                .col.s12
+                  ul.tabs
+                    li#agenda.tab.col.s6
+                      a(href='#test1')
+                        | Pedir
+                    li#agendado.tab.col.s6
+                      a.active(href='#test2')
+                        | Agendados
+                // 1
+                #test1.col.s12
+                  form#new_service
+                    | {% csrf_token %}
+                    .row
+                      h2#valor.center-align
+                        | $ 29.999
+                      span.center-line.green
+                      .center
+                        .input-field.col.s12.m6.l6
+                          select#id_hours(onchange='myChangeFunction()')
+                            option(selected='', value='1')
+                              | 2 horas
+                            option(value='2')
+                              | 4 horas
+                            option(value='3')
+                              | 8 horas
+                          label(for='input_text')
+                            | Cuanto Tiempo
+                        .input-field.col.s12.m6.l6
+                          select#id_ciudad.validate(required='')
+                            option(selected='', value='1')
+                              | Barranquilla
+                          label(for='input_text')
+                            | Ciudad
+                      .input-field.col.s12.m6.l6
+                        input#name.validate(name='name', required='', type='text')
+                        label(for='name')
+                          | Como te Llamas  ?
+                      .input-field.col.s12.m6.l6
+                        input#id_email(required='', type='email')
+                        label(data-error='wrong', data-success='right', for='id_email')
+                          | Email
+                      .input-field.col.s12.m6.l6
+                        input#numero.validate(required='', type='number')
+                        label(for='numero')
+                          | Celular o telefono
+                      .input-field.col.s12.m6.l6
+                        input#id_date.validate(required='', type='text')
+                        label(for='id_date')
+                          | Que dia te podemos ayudar ?
+                    .row
+                      .col.m12.s12
+                        button.waves-effect.light-green.waves-light.btn.rounded.center-align(type='submit')
+                          | Agendar
+                      br
+                      br
+                  center
+                    p.center
+                      | {{ user.username }} pagando ahora un servicio de limpieza        Ecológico  para tu Casa U Oficina.
+                      br
+                      |                                             Estas ayudando a reforestar  arboles  y a cuidar y preservación del Nuestro planeta.
+                      i.fa.fa-heart-o(aria-hidden='true')
+                      br
+                      |                                             Barranquilla Teléfono: (5) 3602411
+                // 1 end
+                #test2
+                  .row
+                    .eventbuttons.center
+                      | {% for object in object_list %}
+                      .col.s12.m6.l6
+                        .card.horizontal
+                          .card-image.teal.lighten-2
+                            .event
+                              div
+                                br
+                                h5(style='color: white')
+                                  | {{ object.fecha|date:"l" }}
+                                h1(style='color: white')
+                                  | {{ object.fecha|date:"d" }}
+                                br
+                                |                                                                 {{ object.fecha|date:"F" }}
+                                |                                                                 {{ object.fecha|date:"Y" }}
+                          .card-stacked
+                            .card-content
+                              p
+                                | Tu pedido de limpieza ecológica fue exitoso,
+                                | te llamaremos para confirmar.
+                            .card-action
+                              | {% if object.hours.value == "30000" %}
+                              form(method='post', action='https://gateway.payulatam.com/ppp-web-gateway/pb.zul', accept-charset='UTF-8')
+                                input(name='buttonId', type='hidden', value='SQ8MTsb/bYyXCmx6xTsefQ/RUFM/PcnGf6PJGlieP11Ctea1lnGSew==')
+                                input(name='merchantId', type='hidden', value='507148')
+                                input(name='accountId', type='hidden', value='679856')
+                                input(name='description', type='hidden', value='pakete1')
+                                input(name='referenceCode', type='hidden', value='0030')
+                                input(name='amount', type='hidden', value='30000')
+                                input(name='tax', type='hidden', value='0')
+                                input(name='taxReturnBase', type='hidden', value='0')
+                                input(name='shipmentValue', value='0', type='hidden')
+                                input(name='currency', type='hidden', value='COP')
+                                input(name='lng', type='hidden', value='es')
+                                input(name='approvedResponseUrl', type='hidden', value='http://wioclean.herokuapp.com/')
+                                input(name='declinedResponseUrl', type='hidden', value='http://wioclean.herokuapp.com/')
+                                input(name='pendingResponseUrl', type='hidden', value='http://wioclean.herokuapp.com/')
+                                input(name='displayShippingInformation', type='hidden', value='YES')
+                                input#urlOrigen(name='sourceUrl', value='', type='hidden')
+                                input(name='buttonType', value='SIMPLE', type='hidden')
+                                input(name='signature', value='04186a2da58ec8571b527eb543b0bdd23343701636daf5ae08958353a126ff55', type='hidden')
+                                button.waves-effect.light-green.waves-light.btn.rounded.center-align(type='submit')
+                                  | Paga Hora
+                                  i.fa.fa-angle-double-right(aria-hidden='true')
+                              |                                                             {% else %} {% if object.hours.value == "50000" %}
+                              form(method='post', action='https://gateway.payulatam.com/ppp-web-gateway/pb.zul', accept-charset='UTF-8')
+                                input(name='buttonId', type='hidden', value='Q3pBz7hqG4XsH1w7XzbofGojQbRULogJm4tNHj6tzTd8fxbjARLPKA==')
+                                input(name='merchantId', type='hidden', value='507148')
+                                input(name='accountId', type='hidden', value='679856')
+                                input(name='description', type='hidden', value='paquete 2')
+                                input(name='referenceCode', type='hidden', value='0030')
+                                input(name='amount', type='hidden', value='50000')
+                                input(name='tax', type='hidden', value='0')
+                                input(name='taxReturnBase', type='hidden', value='0')
+                                input(name='shipmentValue', value='0', type='hidden')
+                                input(name='currency', type='hidden', value='COP')
+                                input(name='lng', type='hidden', value='es')
+                                input(name='approvedResponseUrl', type='hidden', value='http://wioclean.herokuapp.com/')
+                                input(name='declinedResponseUrl', type='hidden', value='http://wioclean.herokuapp.com/')
+                                input(name='pendingResponseUrl', type='hidden', value='http://wioclean.herokuapp.com/')
+                                input(name='displayShippingInformation', type='hidden', value='YES')
+                                input#urlOrigen(name='sourceUrl', value='', type='hidden')
+                                input(name='buttonType', value='SIMPLE', type='hidden')
+                                input(name='signature', value='33b0ed1fda5dce263c66b74fe9e61348ccec923961d1e4323b0e9c604bd0ed8a', type='hidden')
+                                button.waves-effect.light-green.waves-light.btn.rounded.center-align(type='submit')
+                                  | Paga Hora
+                                  i.fa.fa-angle-double-right(aria-hidden='true')
+                              |                                                             {% else %}
+                              form(method='post', action='https://gateway.payulatam.com/ppp-web-gateway/pb.zul', accept-charset='UTF-8')
+                                input(name='buttonId', type='hidden', value='JFIdzezHWzA2xtNnxertBfS36j22YRanxKZVIe2Gh7vZo6HJaunZ+w==')
+                                input(name='merchantId', type='hidden', value='507148')
+                                input(name='accountId', type='hidden', value='679856')
+                                input(name='description', type='hidden', value='paquete 2')
+                                input(name='referenceCode', type='hidden', value='0030')
+                                input(name='amount', type='hidden', value='90000')
+                                input(name='tax', type='hidden', value='0')
+                                input(name='taxReturnBase', type='hidden', value='0')
+                                input(name='shipmentValue', value='0', type='hidden')
+                                input(name='currency', type='hidden', value='COP')
+                                input(name='lng', type='hidden', value='es')
+                                input(name='approvedResponseUrl', type='hidden', value='http://wioclean.herokuapp.com/')
+                                input(name='declinedResponseUrl', type='hidden', value='http://wioclean.herokuapp.com/')
+                                input(name='pendingResponseUrl', type='hidden', value='http://wioclean.herokuapp.com/')
+                                input(name='displayShippingInformation', type='hidden', value='YES')
+                                input#urlOrigen(name='sourceUrl', value='', type='hidden')
+                                input(name='buttonType', value='SIMPLE', type='hidden')
+                                input(name='signature', value='c6528b79eb34b7beee1c7031d1d1ecf04cffe8a6cf87838427a5b5046b59d4a1', type='hidden')
+                                button.waves-effect.light-green.waves-light.btn.rounded.center-align(type='submit')
+                                  | Paga Hora
+                                  i.fa.fa-angle-double-right(aria-hidden='true')
+                              |                                                             {% endif %}
+                              |                                                             {% endif %}
+                      |                                             {% empty %}
+                      div
+                        p
+                          | Es hora para pedir un nuevo servicio de limpieza ecológico. click en pedir .
+                      |                                             {% endfor %}
+| {% include 'footer.html' %}

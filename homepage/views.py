@@ -35,7 +35,7 @@ class StaffRequiredMixin(object):
 		return super(StaffRequiredMixin,self).dispatch(request,*args,**kwargs)
 
 class HomeView(TemplateView):
-	template_name =  'homepage/home_view.html'
+	template_name =  'homepage/home_view.pug'
 	
 def create_service(request):
 	if request.method == 'POST':		

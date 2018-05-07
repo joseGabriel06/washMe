@@ -6,6 +6,7 @@ html(lang='es')
     meta(charset='utf-8')
     meta(content='width=device-width, initial-scale=1, user-scalable=no', name='viewport')
     link(href='https://fonts.googleapis.com/css?family=Acme', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
     link(href="{% static '/css/materialize.min.css' %}", rel='stylesheet')
     link(href="{% static 'home/css/web.css' %}", rel='stylesheet', type='text/css')
     link(href="{% static 'fontawesome/css/font-awesome.css' %}", rel='stylesheet')
@@ -24,8 +25,7 @@ html(lang='es')
           a.button-collapse(data-activates='mobile-demo', href='#')
             i.ion-android-menu
           a.button-collapse(data-activates='slide-in', href='#')
-            i.material-icons
-              | Menu
+            i.large.material-icons dehaze
           ul.right.hide-on-med-and-down
             li
               a.waves-effect.waves-light(href="{% url 'pay' %}")

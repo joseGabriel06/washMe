@@ -40,6 +40,7 @@ class NewWasherView(CreateView):
     def get_form(self):
         form = super(NewWasherView, self).get_form(self.form_class)
         form.fields['birthday'].widget.attrs.update({'class': 'datepicker'})
+        
         return form
     def get_success_url(self):
         return reverse('done')

@@ -5,10 +5,12 @@ from material.frontend import urls as frontend_urls
 from registration.backends.default.views import RegistrationView
 from django.contrib.auth import views as auth_views
 
+
 from homepage.views import (
     HomeView,
     create_service,
     ServiceListView,
+    TermPageView,
  )
 
 from washer.views import (
@@ -28,6 +30,8 @@ urlpatterns = [
     url(r'^service/create', create_service, name='newservice'),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^oauth/', include('social_django.urls', namespace='social')), 
+    url(r'^terminos', TermPageView.as_view(), name='terminos'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 admin.site.site_header = 'Administración de WashMe'

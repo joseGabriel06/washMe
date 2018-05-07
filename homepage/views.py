@@ -68,3 +68,6 @@ class ServiceListView(LoginRequiredMixin,ListView):
 		qs = super(ServiceListView,self).get_queryset(*args,**kwargs).filter(owner=self.request.user)
 		return qs
 	
+class TermPageView(TemplateView):
+
+    template_name = "homepage/terminos.html"

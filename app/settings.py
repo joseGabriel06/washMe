@@ -2,7 +2,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
-DEBUG = True
+DEBUG = False
 
 #smtp server settings for gmail
 EMAIL_HOST          = 'smtp.gmail.com'
@@ -158,3 +158,4 @@ SOCIAL_AUTH_TWITTER_SECRET = 'N8u5LdLV9vdC4NHw3RZ14MuV0D9syHo77MBh4Nc0oUsvBTTlU7
 SOCIAL_AUTH_FACEBOOK_KEY = '290742108111390'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '5d373c5ca4de643d68d80a7f7ada87be'  # App Secret
 
+DATE_INPUT_FORMATS = ['%d/%m/%Y']

@@ -11,7 +11,7 @@ class Register(models.Model):
 	last_name  = models.CharField(max_length=30, verbose_name='Apellidos' )
 	emiil      = models.EmailField(max_length=70,blank=True,verbose_name='Correo')
 	phone      = models.CharField(max_length=30, verbose_name='Celular' )
-	birthday   = models.DateTimeField(verbose_name='Fecha de nacimiento')
+	birthday   = models.DateField(verbose_name='Fecha de nacimiento')
 	#image      = models.FileField(upload_to='image/%Y/%m/%d')
 	status 	   = models.BooleanField()
 	working    = models.BooleanField()

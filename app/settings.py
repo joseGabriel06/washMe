@@ -147,9 +147,9 @@ ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, us
 REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 SITE_ID                 = 1
 LOGIN_REDIRECT_URL      ='pay'
-
+REGISTRATION_EMAIL_HTML = False
 LOGOUT_URL = 'home'
-
+#ACTIVATION_EMAIL_SUBJECT = 'dasf'
 
 SOCIAL_AUTH_TWITTER_KEY    = 'GZRLBBOz845n9awPAKgHTNbSa'
 SOCIAL_AUTH_TWITTER_SECRET = 'N8u5LdLV9vdC4NHw3RZ14MuV0D9syHo77MBh4Nc0oUsvBTTlU7'

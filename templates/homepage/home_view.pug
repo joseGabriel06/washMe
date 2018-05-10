@@ -49,14 +49,14 @@ html(lang='es')
             li
               a(href="{% url 'new_washer' %}")
                 | ¿Estas buscando trabajo?
-      .row
-        .col.m12.s12.hide-on-med-and-down
-          .card-panel.white.z-depth-5.floating-form
-            h5.center-align
-              | ¿Necesitas Ayuda Con El Aseo?
-            a.waves-effect.green.waves-light.btn.rounded.center-align(href="{% url 'pay' %}")
-              | Pedir Ahora &nbsp;&nbsp;
-              i.fa.fa-calendar-plus-o(aria-hidden='true')
+      //- .row
+      //-   .col.m12.s12.hide-on-med-and-down
+      //-     .card-panel.white.z-depth-5.floating-form
+      //-       h5.center-align
+      //-         | ¿Necesitas Ayuda Con El Aseo?
+      //-       a.waves-effect.green.waves-light.btn.rounded.center-align(href="{% url 'pay' %}")
+      //-         | Pedir Ahora &nbsp;&nbsp;
+      //-         i.fa.fa-calendar-plus-o(aria-hidden='true')
     .slider.fullscreen
       ul.slides.back
         li
@@ -78,131 +78,72 @@ html(lang='es')
               | A tu casa u oficina, un profesional del aseo!
             h5.light.grey-text.text-lighten-3
     section#overview.overview-section.sec-padded-1x
-      .container
-        .row
-          .col.s12.l8.offset-l2
-            .center-heading
-              h1
-                | WashMe es..
-              span.center-line.green
-        .row.center
-          .col.s12.m12.l12
-            .card-panel.overview-box.wow.fadeIn(data-wow-delay='0.3s')
-              i.fa.fa-female.fa-3x(aria-hidden='true', style='color:  #8bc34a')
-              h3
-                | Datos abiertos
-              p
-              h5
-                samp
-                  h5(align='justify').flow-text
-                    | Nos enorgullece tener como primera opción de afiliación a madres cabeza de hogar, de las cuales las formas de contacto inicial es a través de los datos abiertos de madres cabeza de hogar  en el atlántico.
-              p
+      .row.container.col.s12.center-heading
+        h1
+          | WashMe es..
+        span.center-line.green
+      .row.center.container
+        .col.s12.m12.l12
+          .card-panel.overview-box.wow.fadeIn(data-wow-delay='0.3s')
+            i.fa.fa-female.fa-3x(aria-hidden='true', style='color:  #8bc34a')
+            h3
+              | Datos abiertos
+              samp
+                h5(align='justify').flow-text
+                  | Nos enorgullece tener como primera opción de afiliación a madres cabeza de hogar, de las cuales las formas de contacto inicial es a través de los datos abiertos de madres cabeza de hogar  en el atlántico.
+            br
+        .col.s12.m12.l12
           .card-panel.overview-box.wow.fadeIn(data-wow-delay='0.3s')
             i.fa.fa-check.fa-3x(aria-hidden='true', style='color:  #8bc34a')
             h3
               | Solución
-            p
-            h5
               samp
                 h5(align='justify').flow-text
                   | Sabemos que puede ser difícil encontrar a alguien de confianza que mantenga muy limpia tu casa u oficina. Washme es tu mejor aliado para esa tarea. Solicita tu profesional de limpieza.
-            p
-          .col.s12.m12.l12
-            .card-panel.overview-box.wow.fadeIn(data-wow-delay='0.3s')
-              i.fa.fa-users.fa-3x(aria-hidden='true', style='color:  #8bc34a')
-              h3
-                | Social
-              br
-              p
-              h5
-                samp
-                  h5(align='justify').flow-text
-                    | Queremos ser apoyo y ejemplo para nuestro departamento, ya que la gran mayoría de los washers asociados son madres cabeza de hogar a las cuales les prestamos nuestra ayuda para su progreso y el de su familia.
-              p
-              br
-          .col.s12.m12.l12
-            .card-panel.overview-box.wow.fadeIn(data-wow-delay='0.4s')
-              i.fa.fa-envira.trans-effect.fa-3x(aria-hidden='true', style='color:  #8bc34a')
-              h3
-                | Ecológico
-              br
-              p
-              h5
-                samp
-                  h5(align='justify').flow-text
-                    | Nos tomamos en serio el medio ambiente, por eso cada uno de los implementos de limpieza que usan nuestros profesionales son totalmente biodegradables y amigables con la  naturaleza. Al solicitar un servicio estas donando recursos para la reforestación y cuidado de nuestro planeta.
-              br
-    section.light-green-3.card-panel.overview-section-box.wow.fadeIn.center
-      h2
-        | Agenda Ahora
-      a(href="{% url 'pay' %}")
-        i.fa.fa-calendar-plus-o.green(target='_blank', aria-hidden='true')
+        .col.s12.m12.l12
+          .card-panel.overview-box.wow.fadeIn(data-wow-delay='0.3s')
+            i.fa.fa-users.fa-3x(aria-hidden='true', style='color:  #8bc34a')
+            h3
+              | Social
+              samp
+                h5(align='justify').flow-text
+                  | Queremos ser apoyo y ejemplo para nuestro departamento, ya que la gran mayoría de los washers asociados son madres cabeza de hogar a las cuales les prestamos nuestra ayuda para su progreso y el de su familia.
+            br
+        .col.s12.m12.l12
+          .card-panel.overview-box.wow.fadeIn(data-wow-delay='0.4s')
+            i.fa.fa-envira.trans-effect.fa-3x(aria-hidden='true', style='color:#8bc34a')
+            h3
+              | Ecológico
+              samp
+                h5(align='justify').flow-text
+                  | Nos tomamos en serio el medio ambiente, por eso cada uno de los implementos de limpieza que usan nuestros profesionales son totalmente biodegradables y amigables con la  naturaleza. Al solicitar un servicio estas donando recursos para la reforestación y cuidado de nuestro planeta.
     section#apoyo.testimonials-section
       .sec-padded-1x
-        .container
-          .row.btm-mrgn-0
-            .col.s12.l8.offset-l2
-              .center-heading
-                h3
-                  | Apoyo
-                span.center-line.green
-                p
-                  | Personas Grandiosas Que Confían En Nosotros.
-          .row.center
+        .row.btm-mrgn-0
+          .col.s12.l8.offset-l2
+            .center-heading
+              h3
+                | Apoyo
+              span.center-line.green
+              p
+                | Personas Grandiosas Que Confían En Nosotros.
+          .row.center.container
             .row
-              .col.s12.m4.l3
-                .item
-                  .testimonials-inner
-                    img(alt='', src="{% static 'img/apollo/ne.png' %}", width='400', height='200')
-                    span
-                      | Neewoi
-              .col.s12.m4.l3
-                .item
-                  .testimonials-inner
-                    img(alt='', src="{% static 'home/img/monokuko.png' %}", width='300', height='200')
-                    span
-                      | Monokuko Space
-              .col.s12.m4.l3
-                .item
-                  .testimonials-inner
-                    img(alt='', src="{% static 'img/apollo/findeter.jpg' %}", width='300', height='200')
-                    span
-                      | Findeter
-              .col.s12.m4.l3
-                .item
-                  .testimonials-inner
-                    img(alt='', src="{% static 'img/apollo/_UsrOhWp_400x400.jpg' %}", width='300', height='200')
-                    span
-                      | Gobierno digital
-              .col.s12.m4.l3
-                .item
-                  .testimonials-inner
-                    img(alt='', src="{% static 'img/apollo/articles-47963_foto_marquesina.jpg' %}", width='400', height='200')
-                    span
-                      | Emprende Con Datos
-              .col.s12.m4.l3
-                .item
-                  .testimonials-inner
-                    img(alt='', src="{% static 'img/apollo/conexiones-digitales-vive-digital-para-la-gente.png' %}", width='400', height='200')
-                    span
-                      | vive-digital
-              .col.s12.m4.l3
-                .item
-                  .testimonials-inner
-                    img(alt='', src="{% static 'img/apollo/MinTIC_(Colombia)_logo.png' %}", width='400', height='200')
-                    span
-                      | MinTIC (Colombia)
-              .col.s12.m4.l3
-                .item
-                  .testimonials-inner
-                    img(alt='', src="{% static 'img/apollo/gobiernodecolombia_0.png' %}", width='400', height='200')
-                    span
-                      | Gobierno de colombia
-              row 
-                .col.s12.m12.l12
-                  .testimonials-inner
-                    img(alt='', src="{% static 'img/apollo/gggg.png' %}", height='200')
-                    span
-                      | Todos por un nuevo pais
+              .col.s6.m4.l3
+                    img(src="{% static 'home/img/monokuko.png' %}",width="100",height="100")
+              .col.s6.m4.l3
+                    img(src="{% static 'img/apollo/findeter.jpg' %}",width="100",height="100")
+              .col.s6.m4.l3
+                    img(src="{% static 'img/apollo/_UsrOhWp_400x400.jpg' %}",width="100",height="100")
+              .col.s6.m4.l3
+                    img(src="{% static 'img/apollo/articles-47963_foto_marquesina.jpg' %}",width="100",height="100")
+              .col.s6.m4.l3
+                    img(src="{% static 'img/apollo/conexiones-digitales-vive-digital-para-la-gente.png' %}",width="100",height="100")
+              .col.s6.m4.l3
+                    img(src="{% static 'img/apollo/MinTIC_(Colombia)_logo.png' %}",width="100",height="100")
+              .col.s6.m4.l3
+                    img(src="{% static 'img/apollo/gobiernodecolombia_0.png' %}",width="100",height="100")
+              .col.s6.m4.l3
+                    img(src="{% static 'img/apollo/gggg.png' %}",width="100",height="100")
     | {% include 'footer.html' %}
     | {% include 'js.html' %}

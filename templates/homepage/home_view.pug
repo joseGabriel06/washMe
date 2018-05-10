@@ -18,10 +18,10 @@ html(lang='es')
         i.fa.fa-arrow-up(aria-hidden='true')
     #navigation
       nav
-        nav
+        .n.container
           a.waves-effect.waves-light(href='#')
             h4(style='color:  #8bc34a')
-              | Wash me
+              | WASHME
           a.button-collapse(data-activates='mobile-demo', href='#')
             i.ion-android-menu
           a.button-collapse(data-activates='slide-in', href='#')
@@ -29,17 +29,18 @@ html(lang='es')
           ul.right.hide-on-med-and-down
             li
               a.waves-effect.waves-light(href="{% url 'pay' %}")
-                | Pedir
+                | ¿ Estas buscando trabajo ?
             li
-              a.waves-effect.waves-light(href='#overview')
-                | Servicios
-            li
+
               a.nav-btn-download.waves-effect.waves-light.btn.light-green.white-text(href="{% url 'new_washer' %}")
-                | ¿Estas buscando trabajo?
+                i
+                | INICIAR SESION 
+                i.fa.fa-envira
+
           ul#slide-in.side-nav
             li
               a.nav-btn-download.waves-effect.waves-light.btn.green.white-text(href="{% url 'pay' %}")
-                | Pedir
+                | INICIAR SESION
             li
               a.waves-effect.waves-light(href='#overview')
                 | Servicios
@@ -49,32 +50,24 @@ html(lang='es')
             li
               a(href="{% url 'new_washer' %}")
                 | ¿Estas buscando trabajo?
-      //- .row
-      //-   .col.m12.s12.hide-on-med-and-down
-      //-     .card-panel.white.z-depth-5.floating-form
-      //-       h5.center-align
-      //-         | ¿Necesitas Ayuda Con El Aseo?
-      //-       a.waves-effect.green.waves-light.btn.rounded.center-align(href="{% url 'pay' %}")
-      //-         | Pedir Ahora &nbsp;&nbsp;
-      //-         i.fa.fa-calendar-plus-o(aria-hidden='true')
     .slider.fullscreen
       ul.slides.back
         li
           img(src="{% static 'home/img/cleanliness-2799470_1920.jpg' %} ")
           .caption.right-align
-            h3(style='color:  white;')
+            h3(style='color:  #8bc34a')
               | Te proveemos con gente de confianza
             h5.light.grey-text.text-lighten-3
         li
           img(src="{% static 'home/img/igu.jpg' %}")
           .caption.right-align
-            h3(style='color: white;')
+            h3(style='color:  #8bc34a')
               | Ayúdanos a sembrar más árboles
             h5.light.grey-text.text-lighten-3
         li
           img.responsaid(src="{% static 'home/img/cleanliness-2799496_1920.jpg' %}")
           .caption.right-align
-            h3(style='color: white;')
+            h3(style='color:  #8bc34a')
               | A tu casa u oficina, un profesional del aseo!
             h5.light.grey-text.text-lighten-3
     section#overview.overview-section.sec-padded-1x

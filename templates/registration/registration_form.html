@@ -7,32 +7,41 @@
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
 <div class="container">
     <div class="row">
         <div class="col s12 m12 l12">
-            <h3>
+            <h3 class="center">
                 {% trans 'Regístrate' %}
             </h3>
+            <br/>
             <form action="." method="post">
                 {% csrf_token %}
-	  	{% form form=form %}  {% endform %}
-                <br>
-                    <input class="btn" type="submit" value="{% trans 'Registrarse' %}"/>
-                </br>
-            </form>
-        </div>
+                {% form form=form %}  {% endform %}
+                <br/>
+                <input class="btn-large center" type="submit" value="{% trans 'Registrarse' %}"/>
+            </br>
+        </form>
     </div>
 </div>
-<div class="container" >
-    <div class="row">
-        <center>
-            <a class="waves-effect waves-teal btn-flat" href="{% url 'terminos' %}">TERMINOS Y CONDICIONES</a>
-        </center>
-    </div>
-     
 </div>
-<br>
-<br>
+<div class="container">
+<div class="row">
+    <center>
+        <a class="waves-effect waves-teal btn-flat" href="{% url 'terminos' %}">
+            TERMINOS Y CONDICIONES
+        </a>
+    </center>
+</div>
+</div>
+<br/>
+<br/>
+<style type="text/css">
+    .help-block{
+            display: none;
+    }
+</style>
 {% endblock %}
 {% include 'js.html' %}
 {% include 'footer.html' %}

@@ -3,54 +3,55 @@
 <div id="navigation">
     <div class="navbar-fixed">
         <nav>
-            <a class="waves-effect waves-light" href="{% url 'home' %}">
-                <h4 style="color:  #8bc34a">
-                    Wash me
-                </h4>
-            </a>
-            <a class="button-collapse" data-activates="mobile-demo" href="#">
-                <i class="ion-android-menu">
-                </i>
-            </a>
-            <a class="button-collapse" data-activates="slide-in" href="#">
-                <i class="fa fa-bars fa-2x" aria-hidden="true">
-                </i>
-            </a>
-            <ul class="right hide-on-med-and-down">
-                {% if request.user.is_authenticated %}
-                <li>
-                    <a href="{% url 'auth_logout' %}?next=/">
-                        {% trans 'Log out' %}
-                    </a>
-                    <i class="fa fa-sign-out" aria-hidden="true">
+            <div class="center">
+                <a class="waves-effect waves-light" href="{% url 'home' %}">
+                    <h4 style="color:  #8bc34a">
+                        Wash me
+                    </h4>
+                </a>
+                <a class="button-collapse" data-activates="mobile-demo" href="#">
+                    <i class="ion-android-menu">
                     </i>
-                </li>
-                {% else %}
-               
-                <li>
-                    <a href="{% url 'home2' %}">
-                        {% trans 'INICIO' %}
-                    </a>
-                </li>
-                {% endif %}
-            </ul>
-            <ul class="side-nav" id="slide-in">
-                {% if request.user.is_authenticated %}
-                <li>
-                    <a href="{% url 'auth_logout' %}">
-                        {% trans 'Log out' %}
-                    </a>
-                    <i class="fa fa-sign-out" aria-hidden="true">
+                </a>
+                <a class="button-collapse" data-activates="slide-in" href="#">
+                    <i class="fa fa-bars fa-2x" aria-hidden="true">
                     </i>
-                </li>
-                {% else %}
-                <li>
-                    <a href="{% url 'home2' %}">
-                        {% trans 'INICIO' %}
-                    </a>
-                </li>
-                {% endif %}
-            </ul>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'auth_logout' %}?next=/">
+                            {% trans 'Log out' %}
+                        </a>
+                        <i class="fa fa-sign-out" aria-hidden="true">
+                        </i>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'home2' %}">
+                            {% trans 'INICIO' %}
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="side-nav" id="slide-in">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'auth_logout' %}">
+                            {% trans 'Log out' %}
+                        </a>
+                        <i class="fa fa-sign-out" aria-hidden="true">
+                        </i>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'home2' %}">
+                            {% trans 'INICIO' %}
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
         </nav>
     </div>
 </div>

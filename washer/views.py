@@ -25,9 +25,8 @@ class NewWasherView(CreateView):
         archivo      = open( dir , "r")
         contenido    = archivo.read()
         first_name   = form.instance.first_name
-        last_name    = form.instance.last_name
         emiil        = form.instance.emiil
-        contenido    = contenido.format(first_name,last_name)
+        contenido    = contenido.format(first_name)
         subject      = 'washme'
         text_content = 'Mensaje...nLinea 2nLinea3'
         html_content = contenido
@@ -39,15 +38,12 @@ class NewWasherView(CreateView):
         return super(NewWasherView, self).form_valid(form)
     def get_form(self):
         form = super(NewWasherView, self).get_form(self.form_class)
-        form.fields['birthday'].widget.attrs.update({'placeholder': '01/03/1996'})
-        
         return form
     def get_success_url(self):
         return reverse('done')
     layout = Layout(
-        Row('first_name','last_name'),
-        Row('emiil','phone'),
-        Row('birthday','sex')
+        Row('first_name'),
+        Row('emiil','sex'),
     )
     
 class HomeDoneView(TemplateView):

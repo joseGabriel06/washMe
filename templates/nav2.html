@@ -1,37 +1,71 @@
+{% load i18n %}
 <div id="navigation">
     <nav>
-        <a class="button-collapse left" data-activates="mobile-demo" href="#">
-            <i class="ion-android-menu">
-            </i>
-        </a>
-        <a class="waves-effect waves-light" href="{% url 'home' %}">
-            <h4 class="center" style="color:  #8bc34a">
-                Wash me
-            </h4>
-        </a>
-        <a class="button-collapse" data-activates="slide-in" href="#">
-            <i class="material-icons">
-                menu
-            </i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-             <li>
-                    <a href="{% url 'registration_register' %}">
-                        Crear Cuenta
+        <div class="container">
+            <a class="button-collapse left" data-activates="mobile-demo" href="#">
+                <i class="ion-android-menu">
+                </i>
+            </a>
+            {% if request.user.is_authenticated %}
+            <a class="waves-effect waves-light" href="{% url 'auth_logout' %}">
+                <h4 class="center" style="color:  #8bc34a">
+                    WASHME
+                </h4>
+            </a>
+            {% else %}
+            <a class="waves-effect waves-light" href="{% url 'home' %}">
+                <h4 class="center" style="color:  #8bc34a">
+                    WASHME
+                </h4>
+            </a>
+            {% endif %}
+            <a class="button-collapse" data-activates="slide-in" href="#">
+                <i class="material-icons">
+                    menu
+                </i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                {% if request.user.is_authenticated %}
+                <li>
+                    <a href="{% url 'auth_logout' %}">
+                        {% trans 'Log out' %}
+                    </a>
+                    <i class="fa fa-sign-out" aria-hidden="true">
+                    </i>
+                </li>
+                {% else %}
+                <li>
+                    <a class="waves-effect waves-light" href="{% url 'home' %}">
+                        INICIO
                     </a>
                 </li>
-            <li>
-                <a class="waves-effect waves-light" href="{% url 'home' %}">
-                    Inicio
-                </a>
-            </li>
-        </ul>
-        <ul class="side-nav" id="slide-in">
-            <li>
-                <a class="nav-btn-download waves-effect waves-light btn green white-text" href="{% url 'home' %}">
-                    Inicio
-                </a>
-            </li>
-        </ul>
-    </nav>
+                <li>
+                    <a class="nav-btn-download waves-effect waves-light btn light-green white-text" href="{% url 'registration_register' %}">
+                        <i>
+                        </i>
+                        CREAR CUENTA
+                        <i class=" fa fa-envira">
+                        </i>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+            <ul class="side-nav" id="slide-in">
+                <li>
+                    <a class="waves-effect waves-light" href="{% url 'home' %}">
+                        INICIO
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-btn-download waves-effect waves-light btn light-green white-text" href="{% url 'registration_register' %}">
+                        <i>
+                        </i>
+                        CREAR CUENTA
+                        <i class=" fa fa-envira">
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>

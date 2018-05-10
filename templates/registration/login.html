@@ -7,23 +7,24 @@
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
 <div class="row center">
     <h3 class="">
         Bienvenido a Wash me
     </h3>
-    <h4>
+    <h5>
         Inicia sesión
-    </h4>
+    </h5>
 </div>
 <br/>
 <div class="row">
     <div class="container">
         <div class=" col s12 m6 l6 ">
-            <h4>
+            <h5>
                 Con Twitter
-            </h4>
-            <br/>
-            <br/>
+            </h5>
             <br/>
             <br/>
             <a class="waves-effect waves-light btn-large" href="{% url 'social:begin' 'twitter' %}">
@@ -33,13 +34,13 @@
             </a>
         </div>
         <div class="col s12 m6 l6 ">
-            <h4 class="center">
+            <h5 class="center">
                 Con tu nombre de usuario
-            </h4>
+            </h5>
             <form action="." method="post">
                 {% csrf_token %}
                 {% form form=form %}  {% endform %}
-                <input class="btn" type="submit" value="{% trans 'Log in' %}"/>
+                <input class="btn-large" type="submit" value="{% trans 'Log in' %}"/>
                 <input name="next" type="hidden" value="{{ next }}"/>
                 <a class="waves-effect waves-teal btn-flat" href="{% url 'auth_password_reset' %}">
                     He olvidado mi contraseña ?

@@ -21,7 +21,7 @@ html(lang='es')
                         | Agendados
                 // 1
                 #test1.col.s12
-                  form#new_service
+                  form(action='/service/create', method='post')#new_service
                     | {% csrf_token %}
                     .row
                       h2#valor.center-align
@@ -29,7 +29,7 @@ html(lang='es')
                       span.center-line.green
                       .center
                         .input-field.col.s12.m6.l6
-                          select#id_hours(onchange='myChangeFunction()')
+                          select(onchange='myChangeFunction()',name='id_hours')
                             option(selected='', value='1')
                               | 2 horas
                             option(value='2')
@@ -39,7 +39,7 @@ html(lang='es')
                           label(for='input_text')
                             | Cuanto Tiempo
                         .input-field.col.s12.m6.l6
-                          select#id_ciudad.validate(required='')
+                          select#id_ciudad.validate(required='',name='id_ciudad')
                             option(selected='', value='1')
                               | Barranquilla
                           label(for='input_text')
@@ -49,15 +49,15 @@ html(lang='es')
                         label(for='name')
                           | Como te Llamas  ?
                       .input-field.col.s12.m6.l6
-                        input#id_email(required='', type='email')
+                        input#id_email(required='', type='email',name='email')
                         label(data-error='wrong', data-success='right', for='id_email')
                           | Email
                       .input-field.col.s12.m6.l6
-                        input#numero.validate(required='', type='number')
+                        input#numero.validate(required='', type='number',name='numero')
                         label(for='numero')
                           | Celular o telefono
                       .input-field.col.s12.m6.l6
-                        input#id_date.validate(required='', type='text')
+                        input#id_date.validate(required='', type='text',name='date')
                         label(for='id_date')
                           | Que dia te podemos ayudar ?
                     .row

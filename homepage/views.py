@@ -12,11 +12,11 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
-
+from django.http import HttpResponseRedirect
 from .models import Service
 from .models import City
 from .models import Packages
-
+from django.core.urlresolvers import reverse_lazy
 from washer.models import Register
 from material import (
     Layout, Fieldset, Row, Column, Span, Field,
@@ -39,8 +39,8 @@ class HomeView(TemplateView):
 	
 def create_service(request):
 	if request.method == 'POST':		
-		hours  = request.POST['hours']
-		ciudad = request.POST['ciudad']
+		hours  = request.POST['id_hours']
+		ciudad = request.POST['id_ciudad']
 		name   = request.POST['name']
 		email  = request.POST['email']
 		numero = request.POST['numero']
@@ -58,7 +58,8 @@ def create_service(request):
 			 fecha   = date,
 			 owner   = request.user
 		)
-		return HttpResponse('')
+		#return HttpResponse(reverse_lazy('homepage:pay'))
+		return HttpResponseRedirect(reverse_lazy('pay'))
 
 
 class ServiceListView(LoginRequiredMixin,ListView):

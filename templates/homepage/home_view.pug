@@ -49,6 +49,15 @@ html(lang='es')
             li
               a(href="{% url 'new_washer' %}")
                 | ¿Estas buscando trabajo?
+      .row
+        .col.m12.s12.hide-on-med-and-down
+          .card-panel.white.z-depth-5.floating-form
+            h5.center-align
+              | ¿Necesitas Ayuda Con El Aseo?
+            a.waves-effect.green.waves-light.btn.rounded.center-align(href="{% url 'pay' %}")
+              | Pedir Ahora &nbsp;&nbsp;
+              i.fa.fa-calendar-plus-o(aria-hidden='true')
+
     .slider.fullscreen
       ul.slides.back
         li

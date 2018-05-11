@@ -29,10 +29,10 @@ class NewWasherView(CreateView):
         form.instance.working = False
         first_name   = form.instance.first_name
         emiil        = form.instance.emiil
+
         dir  = os.path.join(settings.BASE_DIR, "templates" , "email_washer.html" )
         archivo      = open( dir , "r")
         contenido    = archivo.read()
-
         contenido    = contenido.format(first_name)
         subject      = 'washme'
         text_content = 'Mensaje...nLinea 2nLinea3'

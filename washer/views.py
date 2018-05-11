@@ -18,14 +18,21 @@ from material import (
 class NewWasherView(CreateView):
     model = Register
     form_class = UploadForm
+    def get_success_url(self):
+        return reverse('done')
+    layout = Layout(
+        Row('first_name'),
+        Row('emiil','sex'),
+    )
     def form_valid(self, form):
         form.instance.status  = False
         form.instance.working = False
-        dir          = os.path.join(settings.BASE_DIR, "templates" , "email_washer.html" )
-        archivo      = open( dir , "r")
-        contenido    = archivo.read()
         first_name   = form.instance.first_name
         emiil        = form.instance.emiil
+        dir  = os.path.join(settings.BASE_DIR, "templates" , "email_washer.html" )
+        archivo      = open( dir , "r")
+        contenido    = archivo.read()
+
         contenido    = contenido.format(first_name)
         subject      = 'washme'
         text_content = 'Mensaje...nLinea 2nLinea3'
@@ -35,16 +42,31 @@ class NewWasherView(CreateView):
         msg          = EmailMultiAlternatives(subject, text_content, from_email, [to])
         msg.attach_alternative(html_content, "text/html")
         msg.send()
+
         return super(NewWasherView, self).form_valid(form)
-    def get_form(self):
-        form = super(NewWasherView, self).get_form(self.form_class)
-        return form
-    def get_success_url(self):
-        return reverse('done')
-    layout = Layout(
-        Row('first_name'),
-        Row('emiil','sex'),
-    )
+
+    # def form_valid(self, form):
+    #     form.instance.status  = False
+    #     form.instance.working = False
+    #     dir          = os.path.join(settings.BASE_DIR, "templates" , "email_washer.html" )
+    #     archivo      = open( dir , "r")
+    #     contenido    = archivo.read()
+    #     first_name   = form.instance.first_name
+    #     emiil        = form.instance.emiil
+    #     contenido    = contenido.format(first_name)
+    #     subject      = 'washme'
+    #     text_content = 'Mensaje...nLinea 2nLinea3'
+    #     html_content = contenido
+    #     from_email   = '"origen" <Hola@wioclean.com>'
+    #     to           = emiil
+    #     msg          = EmailMultiAlternatives(subject, text_content, from_email, [to])
+    #     msg.attach_alternative(html_content, "text/html")
+    #     msg.send()
+    #     return super(NewWasherView, self).form_valid(form)
+    # def get_form(self):
+    #     form = super(NewWasherView, self).get_form(self.form_class)
+    #     return form
+
     
 class HomeDoneView(TemplateView):
     template_name = "washer/done.html"

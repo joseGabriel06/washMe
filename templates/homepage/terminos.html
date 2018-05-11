@@ -2,179 +2,109 @@
 {% load i18n %}
 {% load staticfiles %}
 <html lang="es">
-    <head>
-        <meta charset="utf-8"/>
-        <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
-        <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet" type="text/css"/>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-        <link href="{% static '/css/materialize.min.css' %}" rel="stylesheet"/>
-        <link href="{% static 'home/css/web.css' %}" rel="stylesheet" type="text/css"/>
-        <link href="{% static 'fontawesome/css/font-awesome.css' %}" rel="stylesheet"/>
-        <title>
-            WashMe | Profesionales del aseo al instante
-        </title>
-    </head>
-    <body>
-        <div id="navigation">
-            <nav>
-                <nav>
-                    <a href="/" class="waves-effect waves-light">
-                        <h4 style="color:  #8bc34a">
-                            Wash me
-                        </h4>
-                    </a>
-                    <a data-activates="mobile-demo" href="#" class="button-collapse">
-                        <i class="ion-android-menu">
-                        </i>
-                    </a>
-                    <a data-activates="slide-in" href="#" class="button-collapse">
-                        <i class="large material-icons">
-                            dehaze
-                        </i>
-                    </a>
-                    <ul class="right hide-on-med-and-down">
-                        <li>
-                            <a href="{% url 'pay' %}" class="waves-effect waves-light">
-                                Pedir
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#overview" class="waves-effect waves-light">
-                                Servicios
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'new_washer' %}" class="nav-btn-download waves-effect waves-light btn light-green white-text">
-                                ¿Estas buscando trabajo?
-                            </a>
-                        </li>
-                    </ul>
-                    <ul id="slide-in" class="side-nav">
-                        <li>
-                            <a href="{% url 'pay' %}" class="nav-btn-download waves-effect waves-light btn green white-text">
-                                Pedir
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#overview" class="waves-effect waves-light">
-                                Servicios
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#apoyo" class="waves-effect waves-light">
-                                Apoyo
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'new_washer' %}">
-                                ¿Estas buscando trabajo?
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </nav>
-        </div>
-        <section>
-            <div class="container">
-                <div class="center">
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <h3>
-                        Terminos y condiciones
-                    </h3>
-                    <br/>
-                    <p>
-                    </p>
-                    <h5>
-                        <samp>
-                            <h5 align="justify" class="flow-text">
-                                Por favor  lea estas condiciones y restricciones detenidamente antes de acceder o usar los servicios de ofrecidos en la plataforma washme.
-                                1. Usuario washme
-                                Al acceder, registrar y utilizar washme, usted acepta y accede a estar obligado por los términos y disposiciones de este acuerdo. Asimismo, al utilizar estos servicios particulares, usted estará sujeto a toda regla o guía de uso correspondiente que se haya publicado para dichos servicios.
-                                Para acceder y disfrutar de todas las funciones de la plataforma washme los usuarios deben registrarse usando sus cuentas de Gmail y de Facebook. El usuario acepta proporcionar información precisa, actualizada y completa durante el proceso registro o inicio de sesión  de la plataforma, y para actualizar la información para que sea exacta, actualizada y completa
-                                2. Facturación, pagos y precios.
-                                Para realizar compras y recibir pagos es obligatorio que usted como usuario debe contar con una cuenta de ahorros en cualquier banco, una tarjeta de crédito o una tarjeta de pagos electrónicos para aclarar en washme no se podra hacer los pagos via efectivo.
-                                a. Billetera Virtual
-                                La función de billetera virtual tiene como objetivo mostrar el dinero que tiene el usuario guardado por las ventas que ha realizado dentro de la aplicación por último la cuenta debe estar vinculada a una cuenta bancaria para poder realizar transacción del monto de la billetera virtual a la cuenta bancaria.
-                                b. Historial de compras y ventas
-                                La billetera virtual le ayudara a usted a tener un registro sobre las compras y ventas que se realice dentro de la aplicación para eso se tiene en cuenta los parámetros de la fecha y la hora.
-                                c.Pagos
-                                A los generadores de contenido usted puede trasladar el monto  guardado que usted desea a su cuenta bancaria, la plataforma washme no le impondrá al usuario una fecha o días de pago preestablecidos ya que usted como usuario no tiene un contrato laboral con nosotros.
-                                d.Comision de ventas
-                                Por las ventas generadas el usuario se queda con el 70% de las ventas e washme se queda con el 30%.
-                                e. Standart washme
-                                Para evitar que hubiese un abuso de precios en el marketplace de tareas se desarrolló una tecnología  para ayudar al usuario a definir el precio de su producto a vender basado en unos parámetros ya preestablecidos por la empresa.
-                                d. Reembolsos
-                                Como usuario washme puede solicitar un reembolso por las compras que ha realizado por los siguientes motivos.
-                                No me ayudo a ganar la asignatura.
-                                Producto final de mala calidad.
-                                Plagio de otro producto final.
-                                Se te hará un reembolso completo de tu compra en el plazo de una semana tras su aprobación. Recibirás el reembolso en la billetera virtual. Si, por cualquier razón, se presenta un problema en la devolución del dinero a su billetera virtual, washme y el banco en la que este afiliado medio de pago electrónico se contactaran con usted para negociar en que medio le gustaría en que le llegara el reembolso.
-                                3. Contenido generado por el usuario
-                                a. Generador de contenido
-                                Los apuntes, trabajos, quizzes y parciales realizados y subidos por usted en la plataforma están protegido por el derecho de propiedad intelectual y de autor esto con el objetivo de evitar plagios y que terceros usen el producto final que usted desarrollo para sacarle beneficios económicos dentro de washme.
-                                Como creador de contenido usted se compromete a que todo el contenido que usted suba en la aplicación sea 100% suyo y esta prohibido plagiar otros productos finales de otros usuarios generadores de contenido si en caso tal de que se descubra sea aplicaran sanciones(véase Seguridad, prohibiciones y sanciones).
-                                b. Adquiriente de contenido
-                                Usted puede utilizar los fondos de la billetera virtual para comprar apuntes de cuaderno, quizzes trabajos y parciales dependiendo de la necesidad  pero usted no podrá revender los productos que haya comprado en el marketplace si en caso tal de que se descubre que usted ha revendido productos de usuarios generadores de contenido se aplicaran sanciones (Véase seguridad, prohibiciones y sanciones).
-                                4.Legislación o jurisdicción aplicables.
-                                a. Regulación societaria
-                                washme es una Sociedad de Acciones Simplificadas constituida en Colombia, se registró en la cámara de comercio ubicada en Carrera 53 No. 106-280 la empresa esta ubicada en la Cra 43 No. 98-86 Balcones de Miramar 2.
-                                b. Marca registrada
-                                El nombre de washme los logotipos e imágenes asociadas están registrados en la Superintendencia de industria y comercio de la ciudad de Barranquilla, con protección en todo el territorio nacional e internacional
-                                c. Propiedad intelectual
-                                Los códigos de la aplicación están protegidos por el DNDA(Direccion Nacional de Derecho de Autor) de igual forma la empresa mantendrá la política de que cualquier nuevo código que se va incorpore en la aplicación enseguida se registre dentro de la DNDA cuya protección se extiende a nivel nacional como internacional.
-                                d.Compromiso de persona natural y de persona jurídica
-                                Una vez que se registre dentro de la aplicación ya sea que usted sea persona natural o persona jurídica se compromete a no realizar ingeniera inversa,a realizar una copia exacta de la aplicación usando todos los elementos del software y futuros elementos que se agreguen en la aplicación y usarlos para otros proyectos que estén orientados al mismo nicho de mercado.
-                                5.Soporte
-                                Cualquier inconveniente nosotros como empresa estamos obligados a responder su problema y solucionarlo para garantizar a usted como usuario una excelente experiencia dentro de la aplicación para eso debe colocar sus datos personales en un formulario y la empresa se encargara de contactarlo.
-                                Servicio al cliente
-                                washme tiene un personal altamente capacitado para atender sus inconvenientes usted puede contactar a servicio al cliente las 24/7,para contactarse acceda a la función integrada de atención al cliente en la app o en la versión web, elija una categoría basado en su necesidad y la empresa se contacta con usted por medio de una llamada(versión movil) o un chat con un asesor(versión web).
-                                b.Resolución de conflictos
-                                Usted y nosotros, washme, acordamos resolver todos los conflictos y reclamaciones que surjan entre las dos partes mediante un mecanismo de arbitraje vinculante e individual. eso incluye, sin limitación, cualquier reclamación resultante o relacionada con: (i) cualquier aspecto de la relación entre ustedes y nosotros; (ii) el uso que haga de washme, su cuenta, los contenidos y servicios.
-                                c.Arbitraje
-                                El arbitraje consiste en presentar el motivo de un conflicto ante un mediador neutral, en vez de ante un juez o un jurado. El arbitraje es menos formal que una demanda judicial, y el proceso de presentación de pruebas es mucho menos exhaustivo. Sigue unas reglas distintas a las de los juicios ante un tribunal, y está sujeto a una revisión muy limitada por parte de los tribunales. El mediador emitirá una decisión por escrito y razonará los motivos de su fallo, si cualquiera de las dos partes lo solicita. Usted y washme comprenden que renuncian al derecho a llevar sus conflictos ante un tribunal así como someterlos a un juicio ante un juez o un jurado.
-                                Usted y washme están de acuerdo en hacer todos los esfuerzos razonables y de buena fe para resolver de manera formal cualquier conflicto, antes de iniciar un proceso de arbitraje. Si una de las partes decide recurrir al arbitraje, primero deberá enviar a la otra un aviso por escrito que describa la naturaleza de la reclamación o conflicto y que indique el tipo de compensación que se solicita. Si usted y washme no llegan a un acuerdo para resolver esa reclamación o ese conflicto dentro de los 30 días siguientes a la recepción de ese aviso, usted o washme pueden iniciar el proceso de arbitraje. Debe enviarse un aviso por escrito mediante correo postal a washme a la siguiente dirección: Cra 43 No 98-86 Balcones de Miramar 2.
-                                6.Seguridad,prohibiciones y sanciones
-                                a. Tips de seguridad
-                                Evita compartir tu contraseña (o, en el caso de los desarrolladores, tu clave secreta), no permitirás que otra persona acceda a tu cuenta ni harás nada que pueda poner en peligro la seguridad de tu cuenta.
-                                Tu información debe ser precisa y mantenerse actualizada.
-                                No prestes tu dispositivo móvil a otras personas no importa que sean amigos o familiares.
-                                Reportar usuarios que suban contenido inapropiado en el Marketplace
-                                b. Prohibiciones
-                                No proporcionarás información personal falsa.
-                                Los productos finales que se vendan en el Marketplace no deben contener mensajes xenófobos y discriminatorios, desnudos, pornografía infantil y violencia grafica.
-                                No realizarás ninguna acción que pudiera inhabilitar o sobrecargar washme, ni afectar al correcto funcionamiento o al aspecto de este, como un ataque de denegación de servicio o la alteración del procesamiento de páginas u otra funcionalidad.
-                                No molestarás, intimidarás ni acosarás a ningún usuario.
-                                No vas realizar hacking, cracking ni spyware, malware o virus para usos malintencionados(Véase Sanciones).
-                                No crearás más de una cuenta personal.
-                                Tanto como creador de contenido como adquiriente de contenido tiene prohibido plagiar los trabajos de otros usuarios washme y publicarlos en el Marketplace como obra propia.
-                                Como creador de contenido está prohibido que dejes tus datos personales(Numero de celular, nombre de usuario en Facebook Twitter e Instagram) a tus seguidores, si la empresa descubre esto se te aplicaran sanciones.
-                                c. Sanciones
-                                Si se descubre que usted ha usado la plataforma para compartir contenido xenófobo, discriminatorio, desnudos, pornografía infantil y violencia grafica su cuenta queda anulada, todo lo que tenga en la billetera electrónica queda confiscado y sera denunciado a las autoridades correspondientes.
-                                Si tanto a los creadores como adquirientes de contenido plagian los productos finales de otros usuarios su cuenta estará bloqueada por 30 dias y si usted sigue repitiendo las mismas faltas su cuenta queda baneada.
-                                Si descubrimos que usted ha vendido apuntes,quizzes trabajos y parciales ya sea independiente o con una empresa similar su cuenta quedara bloqueada por 60 dias.
-                                Las personas que usen multicuenta o perfiles falsos su cuenta quedara bloqueada por 30 dias pero si se descubre que usted ha vuelto a infringir la falta su cuenta quedara bloqueada por 90 dias pero si se repite por tercera vez su cuenta queda baneada.
-                                Si se abusa de la función de reembolsos enseguida su cuenta quedara baneada de la aplicación y el dinero que tenga guardado en la billetera virtual pertenecerá a washme.
-                                d. Demandas
-                                En el caso que surja una empresa competidora washme analizara en su  base de datos si los miembros de la otra empresa han ingresado a nuestra plataforma, si ellos han copiado elementos y signos distintivos de la imagen por ultimo se analizara si miembros de la otra empresa han tenido contacto con personal de washme.
-                                Si se descubre estas evidencias washme tomara acciones legales contra la otra empresa, presentando las evidencias ante un jurado y usaremos todos los recursos legales disponibles en contra de la otra empresa.
-                                Si la empresa washme resulta ganadora en el proceso legal nosotros exigiremos lo siguiente.
-                                La otra empresa pague los honorarios de nuestros abogados asignados.
-                                Darnos todas las ideas anotadas, modelos canvas, lenguajes de programación y prototipos ya hechos.
-                                Todas las ganancias generadas se pasaran a la empresa washme.
-                                Por actos de competencia desleal al personal de alto cargo de la empresa se la va inhabilitar su tarjeta profesional por 10 años.
-                                La empresa tiene dos opciones o entrar en proceso de liquidación o fusionarse con nosotros.
-                                planeta.
-                            </h5>
-                        </samp>
-                    </h5>
-                    <br/>
-                </div>
+    {% include 'head.html' %}
+    {% include 'nav2.html' %}
+    <section>
+        <div class="container">
+            <div class="center">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <h3>
+                    Terminos y condiciones
+                </h3>
+                <br/>
+                <p>
+                </p>
+                <h5>
+                    <samp>
+                        <h5 align="justify" class="flow-text">
+                            Por favor  lea estas condiciones y restricciones detenidamente antes de acceder o usar los servicios de ofrecidos en la plataforma washme.
+                            1. Usuario washme
+                            Al acceder, registrar y utilizar washme, usted acepta y accede a estar obligado por los términos y disposiciones de este acuerdo. Asimismo, al utilizar estos servicios particulares, usted estará sujeto a toda regla o guía de uso correspondiente que se haya publicado para dichos servicios.
+                            Para acceder y disfrutar de todas las funciones de la plataforma washme los usuarios deben registrarse usando sus cuentas de Gmail y de Facebook. El usuario acepta proporcionar información precisa, actualizada y completa durante el proceso registro o inicio de sesión  de la plataforma, y para actualizar la información para que sea exacta, actualizada y completa
+                            2. Facturación, pagos y precios.
+                            Para realizar compras y recibir pagos es obligatorio que usted como usuario debe contar con una cuenta de ahorros en cualquier banco, una tarjeta de crédito o una tarjeta de pagos electrónicos para aclarar en washme no se podra hacer los pagos via efectivo.
+                            a. Billetera Virtual
+                            La función de billetera virtual tiene como objetivo mostrar el dinero que tiene el usuario guardado por las ventas que ha realizado dentro de la aplicación por último la cuenta debe estar vinculada a una cuenta bancaria para poder realizar transacción del monto de la billetera virtual a la cuenta bancaria.
+                            b. Historial de compras y ventas
+                            La billetera virtual le ayudara a usted a tener un registro sobre las compras y ventas que se realice dentro de la aplicación para eso se tiene en cuenta los parámetros de la fecha y la hora.
+                            c.Pagos
+                            A los generadores de contenido usted puede trasladar el monto  guardado que usted desea a su cuenta bancaria, la plataforma washme no le impondrá al usuario una fecha o días de pago preestablecidos ya que usted como usuario no tiene un contrato laboral con nosotros.
+                            d.Comision de ventas
+                            Por las ventas generadas el usuario se queda con el 70% de las ventas e washme se queda con el 30%.
+                            e. Standart washme
+                            Para evitar que hubiese un abuso de precios en el marketplace de tareas se desarrolló una tecnología  para ayudar al usuario a definir el precio de su producto a vender basado en unos parámetros ya preestablecidos por la empresa.
+                            d. Reembolsos
+                            Como usuario washme puede solicitar un reembolso por las compras que ha realizado por los siguientes motivos.
+                            No me ayudo a ganar la asignatura.
+                            Producto final de mala calidad.
+                            Plagio de otro producto final.
+                            Se te hará un reembolso completo de tu compra en el plazo de una semana tras su aprobación. Recibirás el reembolso en la billetera virtual. Si, por cualquier razón, se presenta un problema en la devolución del dinero a su billetera virtual, washme y el banco en la que este afiliado medio de pago electrónico se contactaran con usted para negociar en que medio le gustaría en que le llegara el reembolso.
+                            3. Contenido generado por el usuario
+                            a. Generador de contenido
+                            Los apuntes, trabajos, quizzes y parciales realizados y subidos por usted en la plataforma están protegido por el derecho de propiedad intelectual y de autor esto con el objetivo de evitar plagios y que terceros usen el producto final que usted desarrollo para sacarle beneficios económicos dentro de washme.
+                            Como creador de contenido usted se compromete a que todo el contenido que usted suba en la aplicación sea 100% suyo y esta prohibido plagiar otros productos finales de otros usuarios generadores de contenido si en caso tal de que se descubra sea aplicaran sanciones(véase Seguridad, prohibiciones y sanciones).
+                            b. Adquiriente de contenido
+                            Usted puede utilizar los fondos de la billetera virtual para comprar apuntes de cuaderno, quizzes trabajos y parciales dependiendo de la necesidad  pero usted no podrá revender los productos que haya comprado en el marketplace si en caso tal de que se descubre que usted ha revendido productos de usuarios generadores de contenido se aplicaran sanciones (Véase seguridad, prohibiciones y sanciones).
+                            4.Legislación o jurisdicción aplicables.
+                            a. Regulación societaria
+                            washme es una Sociedad de Acciones Simplificadas constituida en Colombia, se registró en la cámara de comercio ubicada en Carrera 53 No. 106-280 la empresa esta ubicada en la Cra 43 No. 98-86 Balcones de Miramar 2.
+                            b. Marca registrada
+                            El nombre de washme los logotipos e imágenes asociadas están registrados en la Superintendencia de industria y comercio de la ciudad de Barranquilla, con protección en todo el territorio nacional e internacional
+                            c. Propiedad intelectual
+                            Los códigos de la aplicación están protegidos por el DNDA(Direccion Nacional de Derecho de Autor) de igual forma la empresa mantendrá la política de que cualquier nuevo código que se va incorpore en la aplicación enseguida se registre dentro de la DNDA cuya protección se extiende a nivel nacional como internacional.
+                            d.Compromiso de persona natural y de persona jurídica
+                            Una vez que se registre dentro de la aplicación ya sea que usted sea persona natural o persona jurídica se compromete a no realizar ingeniera inversa,a realizar una copia exacta de la aplicación usando todos los elementos del software y futuros elementos que se agreguen en la aplicación y usarlos para otros proyectos que estén orientados al mismo nicho de mercado.
+                            5.Soporte
+                            Cualquier inconveniente nosotros como empresa estamos obligados a responder su problema y solucionarlo para garantizar a usted como usuario una excelente experiencia dentro de la aplicación para eso debe colocar sus datos personales en un formulario y la empresa se encargara de contactarlo.
+                            Servicio al cliente
+                            washme tiene un personal altamente capacitado para atender sus inconvenientes usted puede contactar a servicio al cliente las 24/7,para contactarse acceda a la función integrada de atención al cliente en la app o en la versión web, elija una categoría basado en su necesidad y la empresa se contacta con usted por medio de una llamada(versión movil) o un chat con un asesor(versión web).
+                            b.Resolución de conflictos
+                            Usted y nosotros, washme, acordamos resolver todos los conflictos y reclamaciones que surjan entre las dos partes mediante un mecanismo de arbitraje vinculante e individual. eso incluye, sin limitación, cualquier reclamación resultante o relacionada con: (i) cualquier aspecto de la relación entre ustedes y nosotros; (ii) el uso que haga de washme, su cuenta, los contenidos y servicios.
+                            c.Arbitraje
+                            El arbitraje consiste en presentar el motivo de un conflicto ante un mediador neutral, en vez de ante un juez o un jurado. El arbitraje es menos formal que una demanda judicial, y el proceso de presentación de pruebas es mucho menos exhaustivo. Sigue unas reglas distintas a las de los juicios ante un tribunal, y está sujeto a una revisión muy limitada por parte de los tribunales. El mediador emitirá una decisión por escrito y razonará los motivos de su fallo, si cualquiera de las dos partes lo solicita. Usted y washme comprenden que renuncian al derecho a llevar sus conflictos ante un tribunal así como someterlos a un juicio ante un juez o un jurado.
+                            Usted y washme están de acuerdo en hacer todos los esfuerzos razonables y de buena fe para resolver de manera formal cualquier conflicto, antes de iniciar un proceso de arbitraje. Si una de las partes decide recurrir al arbitraje, primero deberá enviar a la otra un aviso por escrito que describa la naturaleza de la reclamación o conflicto y que indique el tipo de compensación que se solicita. Si usted y washme no llegan a un acuerdo para resolver esa reclamación o ese conflicto dentro de los 30 días siguientes a la recepción de ese aviso, usted o washme pueden iniciar el proceso de arbitraje. Debe enviarse un aviso por escrito mediante correo postal a washme a la siguiente dirección: Cra 43 No 98-86 Balcones de Miramar 2.
+                            6.Seguridad,prohibiciones y sanciones
+                            a. Tips de seguridad
+                            Evita compartir tu contraseña (o, en el caso de los desarrolladores, tu clave secreta), no permitirás que otra persona acceda a tu cuenta ni harás nada que pueda poner en peligro la seguridad de tu cuenta.
+                            Tu información debe ser precisa y mantenerse actualizada.
+                            No prestes tu dispositivo móvil a otras personas no importa que sean amigos o familiares.
+                            Reportar usuarios que suban contenido inapropiado en el Marketplace
+                            b. Prohibiciones
+                            No proporcionarás información personal falsa.
+                            Los productos finales que se vendan en el Marketplace no deben contener mensajes xenófobos y discriminatorios, desnudos, pornografía infantil y violencia grafica.
+                            No realizarás ninguna acción que pudiera inhabilitar o sobrecargar washme, ni afectar al correcto funcionamiento o al aspecto de este, como un ataque de denegación de servicio o la alteración del procesamiento de páginas u otra funcionalidad.
+                            No molestarás, intimidarás ni acosarás a ningún usuario.
+                            No vas realizar hacking, cracking ni spyware, malware o virus para usos malintencionados(Véase Sanciones).
+                            No crearás más de una cuenta personal.
+                            Tanto como creador de contenido como adquiriente de contenido tiene prohibido plagiar los trabajos de otros usuarios washme y publicarlos en el Marketplace como obra propia.
+                            Como creador de contenido está prohibido que dejes tus datos personales(Numero de celular, nombre de usuario en Facebook Twitter e Instagram) a tus seguidores, si la empresa descubre esto se te aplicaran sanciones.
+                            c. Sanciones
+                            Si se descubre que usted ha usado la plataforma para compartir contenido xenófobo, discriminatorio, desnudos, pornografía infantil y violencia grafica su cuenta queda anulada, todo lo que tenga en la billetera electrónica queda confiscado y sera denunciado a las autoridades correspondientes.
+                            Si tanto a los creadores como adquirientes de contenido plagian los productos finales de otros usuarios su cuenta estará bloqueada por 30 dias y si usted sigue repitiendo las mismas faltas su cuenta queda baneada.
+                            Si descubrimos que usted ha vendido apuntes,quizzes trabajos y parciales ya sea independiente o con una empresa similar su cuenta quedara bloqueada por 60 dias.
+                            Las personas que usen multicuenta o perfiles falsos su cuenta quedara bloqueada por 30 dias pero si se descubre que usted ha vuelto a infringir la falta su cuenta quedara bloqueada por 90 dias pero si se repite por tercera vez su cuenta queda baneada.
+                            Si se abusa de la función de reembolsos enseguida su cuenta quedara baneada de la aplicación y el dinero que tenga guardado en la billetera virtual pertenecerá a washme.
+                            d. Demandas
+                            En el caso que surja una empresa competidora washme analizara en su  base de datos si los miembros de la otra empresa han ingresado a nuestra plataforma, si ellos han copiado elementos y signos distintivos de la imagen por ultimo se analizara si miembros de la otra empresa han tenido contacto con personal de washme.
+                            Si se descubre estas evidencias washme tomara acciones legales contra la otra empresa, presentando las evidencias ante un jurado y usaremos todos los recursos legales disponibles en contra de la otra empresa.
+                            Si la empresa washme resulta ganadora en el proceso legal nosotros exigiremos lo siguiente.
+                            La otra empresa pague los honorarios de nuestros abogados asignados.
+                            Darnos todas las ideas anotadas, modelos canvas, lenguajes de programación y prototipos ya hechos.
+                            Todas las ganancias generadas se pasaran a la empresa washme.
+                            Por actos de competencia desleal al personal de alto cargo de la empresa se la va inhabilitar su tarjeta profesional por 10 años.
+                            La empresa tiene dos opciones o entrar en proceso de liquidación o fusionarse con nosotros.
+                            planeta.
+                        </h5>
+                    </samp>
+                </h5>
+                <br/>
             </div>
-        </section>
-        {% include 'footer.html' %}
-        {% include 'js.html' %}
-    </body>
+        </div>
+    </section>
+    {% include 'footer.html' %}
+    {% include 'js.html' %}
+</body>
 </html>

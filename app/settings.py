@@ -2,7 +2,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
-DEBUG = False
+DEBUG = os.environ['DEBUG']
 
 #smtp server settings for gmail
 EMAIL_HOST          = 'smtp.gmail.com'

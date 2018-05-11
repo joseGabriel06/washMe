@@ -12,7 +12,7 @@ nav
       li
         a(href="{% url 'auth_password_change' %}") {% trans 'Change password' %}
       li
-        a(href="{% url 'auth_logout' %}") {% trans 'Log out' %}
+        a(href="{% url 'auth_logout' %}?next=/") {% trans 'Log out' %}
       |{% else %}
       li
         a(href="{% url 'registration_register' %}") {% trans 'Register' %}

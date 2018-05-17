@@ -58,7 +58,7 @@ html(lang='es')
                         label(data-error='wrong', data-success='right', for='id_email')
                           | Email
                       .input-field.col.s12.m6.l6
-                        input#numero.validate(required='', type='number',name='numero')
+                        input#numero.validate(required='', type='number',name='numero', min="0", pattern="^[0-9]+")
                         label(for='numero')
                           | Celular o telefono
                       .input-field.col.s12.m6.l6

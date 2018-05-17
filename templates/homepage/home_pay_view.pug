@@ -5,6 +5,7 @@ html(lang='es')
   | {% include 'head.html' %}
   | {% include 'nav2.html' %}
   | {% include 'js.html' %}
+  script(src="{% static 'home/js/pay.js' %}" type='text/javascript')
   body
     section#apoyo.testimonials-section
       .sec-padded-1x
@@ -33,7 +34,7 @@ html(lang='es')
                       span.center-line.green
                       .center
                         .input-field.col.s12.m6.l6
-                          select(onchange='myChangeFunction();',name='id_hours')
+                          select(onchange='myChangeFunction()',name='id_hours',id='id_hours')
                             option(selected='', value='1')
                               | 2 horas
                             option(value='2')
@@ -53,7 +54,7 @@ html(lang='es')
                         label(for='name')
                           | Como te Llamas  ?
                       .input-field.col.s12.m6.l6
-                        input#id_email(required='', type='email',name='email',class="datepicker")
+                        input#id_email(required='', type='email',name='email')
                         label(data-error='wrong', data-success='right', for='id_email')
                           | Email
                       .input-field.col.s12.m6.l6
@@ -61,7 +62,7 @@ html(lang='es')
                         label(for='numero')
                           | Celular o telefono
                       .input-field.col.s12.m6.l6
-                        input#id_date.validate(required='', type='text',name='date')
+                        input#id_date.validate(required='', type='text',name='date',class="datepicker")
                         label(for='id_date')
                           | Que dia te podemos ayudar ?
                     .row
@@ -179,15 +180,17 @@ html(lang='es')
 
                       |                                             {% endfor %}
 | {% include 'footer.html' %}
-|{% include 'javascript.pug' %}
-|{% include 'js.html' %}
 script(type='text/javascript').
-  $('.datepicker').pickadate.regional['es']({
+  $('.datepicker').pickadate({
   selectMonths: true, // Creates a dropdown to control month
   selectYears: 15, // Creates a dropdown of 15 years to control year,
-  today: 'Today',
-  clear: 'Clear',
+  today: 'Hoy',
+  clear: 'Limpiar',
   close: 'Ok',
-  closeOnSelect: false // Close upon selecting a date,
+  closeOnSelect: false, // Close upon selecting a date,
   container: undefined, // ex. 'body' will append picker to body
   });
+
+
+|{% include 'javascript.pug' %}
+|{% include 'js.html' %}
